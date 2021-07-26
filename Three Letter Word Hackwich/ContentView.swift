@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
+@State private var letter = ""
+@State private var counter = 0
+let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var body: some View {
+    VStack {
+        Text("Three Letter Word")
+            .font(.title)
+            .fontWeight(.bold)
             .padding()
+        Text("Tap the gray box to change the letter")
+        }
+    }
+}
+
+struct CustomLetterBox: View{
+    let color: Color
+    let text: String
+    var body: some View {
+        ZStack{
+            color
+            Text(text)
+                .font(.system(size: 90))
+                .fontWeight(.heavy)
+        }
+        .frame(width: 120, height: 120, alignment: .center)
     }
 }
 
